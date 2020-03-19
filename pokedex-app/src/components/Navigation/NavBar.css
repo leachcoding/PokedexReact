@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  background: #FF0000;
+}
+
+.topNav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.bottomNav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 10px 0px 10px 0px;
+}
+
+.topNav a, .bottomNav a{
+  color: white;
+  text-decoration: none;
+  padding: 3px 15px 3px 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.topNav a:hover, .bottomNav a:hover {
+  color: #FF0000;
+  background-color: white;
+}
+
+.blackBar {
+  width: 100%;
+  background-color: black;
+  height: 5vh;
+}
