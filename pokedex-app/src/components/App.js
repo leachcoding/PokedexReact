@@ -5,6 +5,7 @@ import PokemonList from './PokemonList/PokemonList.js';
 import StatsPage from './StatsPage/StatsPage.js';
 import Generations from './Generations/Generations.js';
 import Moves from './Moves/Moves.js';
+import MoveStats from './MoveStats/MoveStats.js'
 import Berries from './Berries/Berries.js';
 import About from './About/About.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -20,7 +21,8 @@ function App() {
             <Route exact path='/' render={()=> <PokemonList />}/>
             <Route path='/detail/:id' component={StatsPage} />
             <Route path='/generations/:id' component={Generations} />
-            <Route path='/moves' component={Moves} />
+            <Route exact path='/moves' component={Moves} />
+            <Route path='/moves/:id' component={MoveStats} />
             <Route path='/berries' component={Berries} />
             <Route path='/about' component={About} />
           </Switch>

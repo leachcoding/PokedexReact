@@ -12,7 +12,13 @@ function Moves() {
       axios
         .get('https://pokeapi.co/api/v2/move/')
         .then(res => {
-          setMoves(res.data.results);
+          let moveValue = res.data.results;
+          moveValue.map(move => {
+            let regexPat = /\/move\/(\d+)\//;
+            let id = move.url.match(regexPat)[1];
+            return(move['id'] = id);
+          })
+          setMoves(moveValue);
           console.log(res.data.results);
         })
         .catch(err => {
@@ -22,10 +28,11 @@ function Moves() {
     fetchData();
   },[]);
 
+  console.log(moves);
   return (
     <>
       <div className='cards'>
-        {moves.map(item => <Move moves={item} />)}
+        {moves.map(item => <Move moves={item} key={item.name}/>)}
       </div>
     </>
   );
