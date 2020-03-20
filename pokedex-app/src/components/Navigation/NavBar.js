@@ -20,6 +20,7 @@ class Navigation extends Component {
           <Link to={'/generations/6'}><a>Gen 6</a></Link>
           <Link to={'/generations/7'}><a>Gen 7</a></Link>
         </div>
+        <Link to={'/moves'}><a>Moves</a></Link>
         <div className="blackBar"></div>
       </nav>
     );

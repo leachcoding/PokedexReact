@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Link, Route} from 'react-router-dom';
+import MoveStats from '../MoveStats/MoveStats.js';
 import { withRouter } from "react-router";
-import Stats from './Stats.js';
 import './StatsPage.css';
 
 const StatsPage = (props) => {
@@ -50,9 +51,11 @@ const StatsPage = (props) => {
           }
           // Moves
           if(res.data.moves.length > 0){
-            setMoves(res.data.moves.map(element => element.move.name))
+            setMoves(res.data.moves.map(element => {
+              return element.move;
+            }))
           } else {
-            setMoves(res.data.moves[0].move.name)
+            setMoves(res.data.moves[0].move)
           }
           // Stats
           if(res.data.stats.length > 0){
@@ -75,8 +78,7 @@ const StatsPage = (props) => {
 
     fetchData();
   }, [pokeId]);
-  console.log(data, abilityVal, heldItems, moves, stats, types, "HEY");
-  console.log(abilityVal);
+  console.log(moves);
   return (
     <>
     <div className='statsPage'>
@@ -129,8 +131,17 @@ const StatsPage = (props) => {
         <div className="moves">
           <p className='text'>Moves: </p>
           {moves.map(function(el, index){
-            while(index < 4)
-              return <p>{capitalize(el)}</p>;
+            while(index < 4) {
+              let urlVal = el.url;
+              let newUrlVal = urlVal.split('/');
+              console.log(newUrlVal, "NEW URL VAL");
+              return (
+                <>
+                <Link to={`/moves/${newUrlVal[6]}`}><p>{capitalize(el.name)}</p></Link>
+                <Route exact path='/moves/:id' component={MoveStats} />
+                </>
+              );
+            }
           })}
         </div>
 

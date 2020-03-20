@@ -1,43 +1,35 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Navigation from './Navigation/NavBar.js';
 import SearchForm from './Search/SearchBar.js';
 import PokemonList from './PokemonList/PokemonList.js';
 import StatsPage from './StatsPage/StatsPage.js';
 import Generations from './Generations/Generations.js';
+import Moves from './Moves/Moves.js';
+import MoveStats from './MoveStats/MoveStats.js'
+import Berries from './Berries/Berries.js';
+import About from './About/About.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-class App extends Component {
+function App() {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      typeFilters: []
-    };
-  }
-
-  handleFilters = typeFilters => {
-    if(!typeFilters) {
-      this.setState({typeFilters: []});
-    }
-    this.setState({typeFilters:typeFilters});
-  };
-
-
-  render() {
     return (
       <BrowserRouter>
         <div>
           <Navigation />
-          <SearchForm filter={this.handleFilters}/>
+          <SearchForm />
           <Switch>
-            <Route exact path='/' render={()=> <PokemonList filter={this.handleFilters} />}/>
+            <Route exact path='/' render={()=> <PokemonList />}/>
             <Route path='/detail/:id' component={StatsPage} />
             <Route path='/generations/:id' component={Generations} />
+            <Route exact path='/moves' component={Moves} />
+            <Route path='/moves/:id' component={MoveStats} />
+            <Route path='/berries' component={Berries} />
+            <Route path='/about' component={About} />
           </Switch>
         </div>
       </BrowserRouter>
-    )
+    );
   }
-}
+
 
 export default App;
