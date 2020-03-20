@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
-import Stats from './Stats.js';
 import './StatsPage.css';
 
 const StatsPage = (props) => {

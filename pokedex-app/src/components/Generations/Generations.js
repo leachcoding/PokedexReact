@@ -7,7 +7,6 @@ import '../PokemonList/PokemonList.css';
 const Generations = (props) => {
   const [data, setData] = useState([]);
 
-
   const genId = props.match.params.id;
   useEffect(() => {
     const fetchData = () => {
