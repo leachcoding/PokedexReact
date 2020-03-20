@@ -5,6 +5,7 @@ import { withRouter } from "react-router";
 const MoveStats = (props) => {
   const [moves, setMoves] = useState([]);
   const [types, setTypes] = useState([]);
+  const [text, setText] = useState([]);
 
   const moveId = props.match.params.id;
 
@@ -19,7 +20,9 @@ const MoveStats = (props) => {
           setMoves(res.data);
 
           // Types
-            setTypes(res.data.type);
+          setTypes(res.data.type);
+          // Text
+          setText(res.data.flavor_text_entries[21]);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -31,17 +34,17 @@ const MoveStats = (props) => {
 
   console.log(moves);
   console.log(types);
+  console.log(text);
   return (
     <>
-      <div>
-        <p>Move: {moves.name}</p>
-        <p>Accuracy: {moves.accuracy}</p>
-        <p>Power: {moves.power}</p>
-        <p>PP: {moves.pp}</p>
-        <div className='types'>
-          <p className='text'>Type: </p>
-          <p className={types.name}>{types.name}</p>
-        </div>
+      <div className='types'>
+        <p className='text'>Move: {moves.name}</p>
+        <p className='text'>Accuracy: {moves.accuracy}</p>
+        <p className='text'>Power: {moves.power}</p>
+        <p className='text'>PP: {moves.pp}</p>
+        <p className='text'>Type: </p>
+        <p className={types.name}>{types.name}</p>
+        <p className='text'>Desc: {text.flavor_text}</p>
       </div>
     </>
   );
