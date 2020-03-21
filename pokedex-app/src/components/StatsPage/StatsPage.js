@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link, Route} from 'react-router-dom';
 import MoveStats from '../MoveStats/MoveStats.js';
+import AbilityStats from '../AbilityStats/AbilityStats.js';
 import { withRouter } from "react-router";
 import './StatsPage.css';
 
@@ -79,6 +80,7 @@ const StatsPage = (props) => {
     fetchData();
   }, [pokeId]);
   console.log(moves);
+  console.log(abilityVal, abilityUrl, 'val url');
   return (
     <>
     <div className='statsPage'>
@@ -148,7 +150,14 @@ const StatsPage = (props) => {
         <div className="ability">
           <p className='text'>Abilities: </p>
           {abilityVal.map(function(el, index){
-            return <p>{capitalize(el)}</p>;
+            console.log(el.url);
+            console.log(abilityUrl[index]);
+            return (
+              <>
+                <Link to={`/abilities/${el}`}><p>{capitalize(el)}</p></Link>
+                <Route exact path='/abilities/:id' component={AbilityStats} />
+              </>
+            );
           })}
         </div>
       </div>

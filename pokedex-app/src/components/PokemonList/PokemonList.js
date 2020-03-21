@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from 'react';
-import {Route} from 'react-router-dom';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Pokemon from '../Pokemon/Pokemon.js';
@@ -7,11 +6,12 @@ import './PokemonList.css';
 
 function PokemonList() {
   const [data, setData] = useState([]);
+  const [pages, setPages] = useState(0);
 
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get('https://pokeapi.co/api/v2/pokemon/')
+        .get(`https://pokeapi.co/api/v2/pokemon?offset=${pages}&limit=20/`)
         .then(res => {
           // console.log(res.data, "THIS IS POKEMON LIST RES.DATA");
           // console.log(res.data.results, "THIS IS POKEMON LIST RES.DATA.RESULTS");
@@ -30,14 +30,22 @@ function PokemonList() {
 
     fetchData();
     // console.log(data, "THIS IS DATA");
-  }, []);
+  }, [pages]);
 
   console.log(data, "This is data line 58");
     return (
       <>
+      <button onClick={() => setPages(pages -100)}>Prev - 5</button>
+      <button onClick={() => setPages(pages -20)}>Prev</button>
+      <button onClick={() => setPages(pages + 20)}>Next</button>
+      <button onClick={() => setPages(pages + 100)}>Next + 5</button>
         <div className='cards'>
           {data.map(item => <Pokemon data={item} key={item.name}/>)}
         </div>
+        <button onClick={() => setPages(pages -100)}>Prev - 5</button>
+        <button onClick={() => setPages(pages -20)}>Prev</button>
+        <button onClick={() => setPages(pages + 20)}>Next</button>
+        <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </>
     );
 

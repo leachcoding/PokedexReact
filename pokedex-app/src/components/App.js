@@ -8,6 +8,7 @@ import Moves from './Moves/Moves.js';
 import MoveStats from './MoveStats/MoveStats.js'
 import Berries from './Berries/Berries.js';
 import Abilities from './Abilities/Abilities.js';
+import AbilityStats from './AbilityStats/AbilityStats.js';
 import About from './About/About.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -25,7 +26,8 @@ function App() {
             <Route exact path='/moves' component={Moves} />
             <Route path='/moves/:id' component={MoveStats} />
             <Route path='/berries' component={Berries} />
-            <Route path='/abilities' component={Abilities} />
+            <Route exact path='/abilities' component={Abilities} />
+            <Route path='/abilities/:id' component={AbilityStats} />
             <Route path='/about' component={About} />
           </Switch>
         </div>
