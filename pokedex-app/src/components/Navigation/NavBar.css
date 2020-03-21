@@ -13,14 +13,20 @@ nav {
   margin-top: 10px;
 }
 
-.bottomNav {
+.midNav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   margin: 10px 0px 10px 0px;
 }
 
-.topNav a, .bottomNav a{
+.bottomNav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.topNav a, .midNav a, .bottomNav a{
   color: white;
   text-decoration: none;
   padding: 3px 15px 3px 15px;
@@ -29,7 +35,7 @@ nav {
   opacity: 1;
 }
 
-.topNav a:hover, .bottomNav a:hover {
+.topNav a:hover, .midNav a:hover, .bottomNav a:hover {
   color: #FF0000;
   background-color: white;
 }

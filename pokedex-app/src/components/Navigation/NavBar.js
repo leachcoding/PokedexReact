@@ -11,7 +11,7 @@ class Navigation extends Component {
           <a href="https://pokeapi.co/">API</a>
           <Link to={'/about'}><a>About</a></Link>
         </div>
-        <div className="bottomNav">
+        <div className="midNav">
           <Link to={'/generations/1'}><a>Gen 1</a></Link>
           <Link to={'/generations/2'}><a>Gen 2</a></Link>
           <Link to={'/generations/3'}><a>Gen 3</a></Link>
@@ -20,7 +20,11 @@ class Navigation extends Component {
           <Link to={'/generations/6'}><a>Gen 6</a></Link>
           <Link to={'/generations/7'}><a>Gen 7</a></Link>
         </div>
-        <Link to={'/moves'}><a>Moves</a></Link>
+        <div className='bottomNav'>
+          <Link to={'/moves'}><a>Moves</a></Link>
+          <Link to={'/abilities'}><a>Abilities</a></Link>
+          <Link to={'/berries'}><a>Berries</a></Link>
+        </div>
         <div className="blackBar"></div>
       </nav>
     );
