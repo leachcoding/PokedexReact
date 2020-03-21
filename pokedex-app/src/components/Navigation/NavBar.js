@@ -23,7 +23,11 @@ class Navigation extends Component {
         <div className='bottomNav'>
           <Link to={'/moves'}><a>Moves</a></Link>
           <Link to={'/abilities'}><a>Abilities</a></Link>
+          <Link to={'/types'}><a>Types</a></Link>
           <Link to={'/berries'}><a>Berries</a></Link>
+          <Link to={'/items'}><a>Items</a></Link>
+          <Link to={'/machines'}><a>Machines</a></Link>
+          <Link to={'/locations'}><a>Locations</a></Link>
         </div>
         <div className="blackBar"></div>
       </nav>

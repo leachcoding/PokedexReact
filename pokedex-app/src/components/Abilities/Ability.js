@@ -1,13 +1,17 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
+import AbiiltyStats from '../AbilityStats/AbilityStats.js';
 
 const Ability = props => {
   return (
     <>
       <div className='card'>
-        <p>Id: {props.abilities.id}</p>
-        <p>Ability: {props.abilities.name}</p>
+        <Link to={`/abilities/${props.ability.id}`}>
+        <p>Id: {props.ability.id}</p>
+        <p>Ability: {props.ability.name}</p>
+        </Link>
       </div>
+      <Route exact path='abilities/:id' component={AbilityStats} />
     </>
   );
 };
