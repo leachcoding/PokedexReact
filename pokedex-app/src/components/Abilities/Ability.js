@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import AbiiltyStats from '../AbilityStats/AbilityStats.js';
+import AbilityStats from '../AbilityStats/AbilityStats.js';
 
 const Ability = props => {
   return (
