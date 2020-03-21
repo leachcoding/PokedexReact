@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
+import './AbilityStats.css';
+import {Link, Route} from 'react-router-dom';
+import StatsPage from '../StatsPage/StatsPage.js';
 
 const AbilityStats = (props) => {
   const [ability, setAbility] = useState([]);
@@ -14,12 +17,14 @@ const AbilityStats = (props) => {
       axios
         .get('https://pokeapi.co/api/v2/ability/' + abilityId)
         .then(res => {
+          console.log(res.data);
           setAbility(res.data);
-
+          console.log(res.data);
           //Text
           setText(res.data.flavor_text_entries[21]);
           //Pokemon
-          setPokemon(res.data.pokemon)
+          console.log(res.data.pokemon);
+          setPokemon(res.data.pokemon);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -29,6 +34,7 @@ const AbilityStats = (props) => {
 
     fetchData();
   }, [abilityId]);
+
   console.log(ability);
   console.log(pokemon);
   console.log(text);
@@ -38,7 +44,17 @@ const AbilityStats = (props) => {
       <div className='types'>
         <p className='text'>Ability: {ability.name}</p>
         <p className='text'>Effect: {text.flavor_text}</p>
-        <p className='text'>Pokemon</p>
+        <p className='text'>Pokemon:</p>
+        <div className='pokemonRow'>
+        {pokemon.map(e => {
+          return (
+            <>
+            <Link to={`/detail/${e.pokemon.name}`}><p>{e.pokemon.name}</p></Link>
+            <Route exact path='detail/:id' component={StatsPage}/>
+            </>
+          );
+        })}
+        </div>
       </div>
     </>
   );
