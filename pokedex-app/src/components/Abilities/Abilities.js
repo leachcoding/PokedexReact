@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Ability from './Ability.js';
+import AbilitiesSearch from '../Search/AbilitiesSearch';
 
 function Abilities() {
   const [abilities, setAbilities] = useState([]);
@@ -37,6 +38,7 @@ function Abilities() {
       <button onClick={() => setPages(pages + 20)}>Next</button>
       <button onClick={() => setPages(pages + 100)}>Next + 5</button>
     </div>
+    <AbilitiesSearch />
       <div className='cards'>
         {abilities.map(item => <Ability abilities={item} key={item.name}/>)}
       </div>

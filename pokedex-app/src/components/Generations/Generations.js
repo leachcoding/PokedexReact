@@ -31,6 +31,7 @@ const Generations = (props) => {
   };
     fetchData();
   }, [genId]);
+
   console.log(data, "LINE 30");
   return (
     <>

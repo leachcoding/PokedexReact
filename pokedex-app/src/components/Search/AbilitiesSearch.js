@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import StatsPage from '../StatsPage/StatsPage';
+import AbilityStats from '../AbilityStats/AbilityStats';
 import {Route} from 'react-router-dom';
 import {withRouter} from 'react-router';
 import './SearchBar.css';
 
 //This is for the pokemonlist search. You can search by id or name to get the stats of the pokemon searched for
-const SearchForm = (props) => {
+const AbilitiesSearch = (props) => {
   const [query, setQuery] = useState('');
 
   const handleChange = event => {
@@ -19,20 +19,20 @@ const SearchForm = (props) => {
     const value = query;
     setQuery('');
     if (value) {
-      return props.history.push(`/detail/${query.toLowerCase()}`)
+      return props.history.push(`/abilities/${query.toLowerCase()}`)
     }
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input placeholder='Search Pokemon by name or id' value={query} onChange={handleChange}/>
+        <input placeholder='Search abilities by name or id' value={query} onChange={handleChange}/>
         <button className='submitButton'>Search</button>
       </form>
-      <Route exact path="detail/:id" component={StatsPage} />
+      <Route exact path="abilities/:id" component={AbilityStats} />
     </>
   );
 }
 
 
-export default withRouter(SearchForm);
+export default withRouter(AbilitiesSearch);

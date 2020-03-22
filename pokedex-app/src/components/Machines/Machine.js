@@ -6,19 +6,24 @@ import MachineStats from '../MachineStats/MachineStats.js';
 const Machine = props => {
 
   const [data, setData] = useState('');
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
 
   useEffect(() => {
     const fetchData = () => {
       axios
         .get(`https://pokeapi.co/api/v2/machine/${props.machines.id}`)
         .then(res => {
-          setData(`${res.data.item.name} - ${res.data.move.name}`)
+          setData(`${res.data.item.name.toUpperCase()} - ${capitalize(res.data.move.name)}`)
         })
         .catch(err => console.log(err, 'err'));
     }
 
     fetchData();
   }, [props.machines.id]);
+
   return (
     <>
       <div className='card'>

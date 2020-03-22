@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Move from './Move.js';
+import MovesSearch from '../Search/MovesSearch';
 
 function Moves() {
   const [moves, setMoves] = useState([]);
@@ -37,6 +38,7 @@ function Moves() {
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
+      <MovesSearch />
       <div className='cards'>
         {moves.map(item => <Move moves={item} key={item.name}/>)}
       </div>

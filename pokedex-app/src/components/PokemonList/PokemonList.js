@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Pokemon from '../Pokemon/Pokemon.js';
+import SearchForm from '../Search/SearchBar.js';
 import './PokemonList.css';
 
 function PokemonList() {
@@ -41,6 +42,7 @@ function PokemonList() {
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
+      <SearchForm />
         <div className='cards'>
           {data.map(item => <Pokemon data={item} key={item.name}/>)}
         </div>

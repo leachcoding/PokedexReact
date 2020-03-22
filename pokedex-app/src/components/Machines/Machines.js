@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Machine from './Machine.js';
+import MachinesSearch from '../Search/MachinesSearch';
 
 function Machines() {
   const [machines, setMachines] = useState([]);
@@ -37,6 +38,7 @@ function Machines() {
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
+      <MachinesSearch />
       <div className='cards'>
         {machines.map(item => <Machine machines={item} key={item.id}/>)}
       </div>
