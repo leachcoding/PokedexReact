@@ -14,6 +14,7 @@ import About from './About/About.js';
 import Locations from './Locations/Locations.js';
 import Machines from './Machines/Machines.js';
 import Items from './Items/Items.js';
+import Footer from './Footer/Footer.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path='/machines' component={Machines} />
             <Route path='/items' component={Items} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );
