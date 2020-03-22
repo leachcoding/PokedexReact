@@ -9,6 +9,11 @@ const MoveStats = (props) => {
 
   const moveId = props.match.params.id;
 
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
+
   useEffect(() => {
     const fetchData = () => {
       axios
@@ -22,7 +27,7 @@ const MoveStats = (props) => {
           // Types
           setTypes(res.data.type);
           // Text
-          setText(res.data.flavor_text_entries[21]);
+          setText(res.data.flavor_text_entries[21] || res.data.flavor_text_entries[2]);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -38,12 +43,12 @@ const MoveStats = (props) => {
   return (
     <>
       <div className='types'>
-        <p className='text'>Move: {moves.name}</p>
+        <p className='text'>Move: {capitalize(moves.name)}</p>
         <p className='text'>Accuracy: {moves.accuracy}</p>
         <p className='text'>Power: {moves.power}</p>
         <p className='text'>PP: {moves.pp}</p>
         <p className='text'>Type: </p>
-        <p className={types.name}>{types.name}</p>
+        <p className={types.name}>{capitalize(types.name)}</p>
         <p className='text'>Desc: {text.flavor_text}</p>
       </div>
     </>

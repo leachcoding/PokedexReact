@@ -1,12 +1,12 @@
 import React from 'react';
 import Navigation from './Navigation/NavBar.js';
-import SearchForm from './Search/SearchBar.js';
 import PokemonList from './PokemonList/PokemonList.js';
 import StatsPage from './StatsPage/StatsPage.js';
 import Generations from './Generations/Generations.js';
 import Moves from './Moves/Moves.js';
 import MoveStats from './MoveStats/MoveStats.js'
 import Types from './Types/Types.js';
+import TypeStats from './TypeStats/TypeStats.js'
 import Berries from './Berries/Berries.js';
 import Abilities from './Abilities/Abilities.js';
 import AbilityStats from './AbilityStats/AbilityStats.js';
@@ -22,7 +22,6 @@ function App() {
       <BrowserRouter>
         <div>
           <Navigation />
-          <SearchForm />
           <Switch>
             <Route exact path='/' render={()=> <PokemonList />}/>
             <Route path='/detail/:id' component={StatsPage} />
@@ -30,6 +29,7 @@ function App() {
             <Route exact path='/moves' component={Moves} />
             <Route path='/moves/:id' component={MoveStats} />
             <Route exact path='/types' component={Types} />
+            <Route path ='/types/:id' component={TypeStats} />
             <Route path='/berries' component={Berries} />
             <Route exact path='/abilities' component={Abilities} />
             <Route path='/abilities/:id' component={AbilityStats} />

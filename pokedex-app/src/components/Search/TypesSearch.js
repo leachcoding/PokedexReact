@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import StatsPage from '../StatsPage/StatsPage';
+import TypeStats from '../TypeStats/TypeStats';
 import {Route} from 'react-router-dom';
 import {withRouter} from 'react-router';
 import './SearchBar.css';
 
 //This is for the pokemonlist search. You can search by id or name to get the stats of the pokemon searched for
-const SearchForm = (props) => {
+const TypesSearch = (props) => {
   const [query, setQuery] = useState('');
 
   const handleChange = event => {
@@ -19,7 +19,7 @@ const SearchForm = (props) => {
     const value = query;
     setQuery('');
     if (value) {
-      return props.history.push(`/detail/${query.toLowerCase()}`)
+      return props.history.push(`/types/${query.toLowerCase()}`)
     }
   };
 
@@ -29,10 +29,10 @@ const SearchForm = (props) => {
         <input placeholder='Search Pokemon by name or id' value={query} onChange={handleChange}/>
         <button className='submitButton'>Search</button>
       </form>
-      <Route exact path="detail/:id" component={StatsPage} />
+      <Route exact path="types/:id" component={TypeStats} />
     </>
   );
 }
 
 
-export default withRouter(SearchForm);
+export default withRouter(TypesSearch);

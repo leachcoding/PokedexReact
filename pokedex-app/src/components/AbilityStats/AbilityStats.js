@@ -38,18 +38,22 @@ const AbilityStats = (props) => {
   console.log(ability);
   console.log(pokemon);
   console.log(text);
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
 
   return(
     <>
       <div className='types'>
-        <p className='text'>Ability: {ability.name}</p>
+        <p className='text'>Ability: {capitalize(ability.name)}</p>
         <p className='text'>Effect: {text.flavor_text}</p>
         <p className='text'>Pokemon:</p>
         <div className='pokemonRow'>
         {pokemon.map(e => {
           return (
             <>
-            <Link to={`/detail/${e.pokemon.name}`}><p>{e.pokemon.name}</p></Link>
+            <Link to={`/detail/${e.pokemon.name}`}><p>{capitalize(e.pokemon.name)}</p></Link>
             <Route exact path='detail/:id' component={StatsPage}/>
             </>
           );

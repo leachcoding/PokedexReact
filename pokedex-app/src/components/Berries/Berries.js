@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Berry from './Berry.js';
+import BerriesSearch from '../Search/BerriesSearch';
 
 function Berries() {
   const [berries, setBerries] = useState([]);
@@ -37,6 +38,7 @@ function Berries() {
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
+      <BerriesSearch />
       <div className='cards'>
         {berries.map(item => <Berry berries={item} key={item.name}/>)}
       </div>

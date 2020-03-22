@@ -3,6 +3,7 @@ import axios from "axios";
 import {Link, Route} from 'react-router-dom';
 import MoveStats from '../MoveStats/MoveStats.js';
 import AbilityStats from '../AbilityStats/AbilityStats.js';
+import TypeStats from '../TypeStats/TypeStats.js';
 import { withRouter } from "react-router";
 import './StatsPage.css';
 

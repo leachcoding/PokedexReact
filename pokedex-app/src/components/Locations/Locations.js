@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Location from './Location.js';
+import LocationsSearch from '../Search/LocationsSearch.js';
 
 function Locations() {
   const [locations, setMoves] = useState([]);
@@ -37,6 +38,7 @@ function Locations() {
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
+      <LocationsSearch />
       <div className='cards'>
         {locations.map(item => <Location locations={item} key={item.name}/>)}
       </div>

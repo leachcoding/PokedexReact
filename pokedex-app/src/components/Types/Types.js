@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
 import Type from './Type.js';
+import TypesSearch from '../Search/TypesSearch';
 
 function Types() {
   const [types, setTypes] = useState([]);
@@ -37,6 +38,7 @@ function Types() {
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
+      <TypesSearch />
       <div className='cards'>
         {types.map(item => <Type types={item} key={item.name}/>)}
       </div>
