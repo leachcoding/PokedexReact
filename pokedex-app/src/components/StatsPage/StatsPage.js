@@ -98,8 +98,7 @@ const StatsPage = (props) => {
           </div>
         </div>
         <div className='infoDiv'>
-          <p>Id#: {data.id}</p>
-          <p>Name: {capitalize(data.name)}</p>
+          <p>Name: {capitalize(data.name)} -- #{data.id}</p>
           <p>Base XP: {data.base_experience}</p>
           <p>Height: {(data.height * 0.1).toFixed(1)}m</p>
           <p>Weight: {(data.weight * 0.1).toFixed(1)}kg</p>
@@ -139,7 +138,7 @@ const StatsPage = (props) => {
               console.log(newUrlVal, "NEW URL VAL");
               return (
                 <>
-                <Link to={`/moves/${newUrlVal[6]}`}><p>{capitalize(el.name)}</p></Link>
+                <Link to={`/moves/${newUrlVal[6]}`}><a>{capitalize(el.name)}</a></Link>
                 <Route exact path='/moves/:id' component={MoveStats} />
                 </>
               );
@@ -154,7 +153,7 @@ const StatsPage = (props) => {
             console.log(abilityUrl[index]);
             return (
               <>
-                <Link to={`/abilities/${el}`}><p>{capitalize(el)}</p></Link>
+                <Link to={`/abilities/${el}`}><a>{capitalize(el)}</a></Link>
                 <Route exact path='/abilities/:id' component={AbilityStats} />
               </>
             );

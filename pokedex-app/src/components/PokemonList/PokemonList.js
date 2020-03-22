@@ -35,17 +35,21 @@ function PokemonList() {
   console.log(data, "This is data line 58");
     return (
       <>
-      <button onClick={() => setPages(pages -100)}>Prev - 5</button>
-      <button onClick={() => setPages(pages -20)}>Prev</button>
-      <button onClick={() => setPages(pages + 20)}>Next</button>
-      <button onClick={() => setPages(pages + 100)}>Next + 5</button>
-        <div className='cards'>
-          {data.map(item => <Pokemon data={item} key={item.name}/>)}
-        </div>
+      <div className = 'paginationRow'>
         <button onClick={() => setPages(pages -100)}>Prev - 5</button>
         <button onClick={() => setPages(pages -20)}>Prev</button>
         <button onClick={() => setPages(pages + 20)}>Next</button>
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
+      </div>
+        <div className='cards'>
+          {data.map(item => <Pokemon data={item} key={item.name}/>)}
+        </div>
+        <div className = 'paginationRow'>
+          <button onClick={() => setPages(pages -100)}>Prev - 5</button>
+          <button onClick={() => setPages(pages -20)}>Prev</button>
+          <button onClick={() => setPages(pages + 20)}>Next</button>
+          <button onClick={() => setPages(pages + 100)}>Next + 5</button>
+        </div>
       </>
     );
 

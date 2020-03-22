@@ -1,9 +1,10 @@
 .statsPage {
   width: 96%;
-  margin: 0px 1.5% 0px 1.5%;
+  margin: 10px 1.5% 5px 1.5%;
   border-radius: 15px;
   box-shadow: 2px 2px 2px grey;
   border: 1px solid black;
+  font-size: 13px;
 }
 
 .statsDiv {
@@ -28,6 +29,7 @@
 
 .statsDiv .imgDiv div img {
   width: 70%;
+  max-height: 125px;
 }
 
 .statsDiv .infoDiv {
@@ -37,6 +39,17 @@
   justify-content: center;
   align-items: center;
   padding-left: 10px;
+}
+
+.statsDiv .infoDiv p{
+  width: 100%;
+  background-color: red;
+  border-color: darkred;
+  box-shadow: 2px 2px 2px pink;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px 0px 5px 0px;
 }
 
 .typeItem {
@@ -292,18 +305,38 @@
   margin: 0 10px 0 10px;
 }
 
-.moves {
-  flex: 6;
-  padding-left: 20px;
-}
-.ability {
-  flex: 5;
-}
 .ability, .moves {
+  width: 98%;
+  margin: 5px 5px 5px 10px;
+  box-shadow: 1px 1px 1px;
+  border: 1px solid gray;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.moves a {
+  text-align: center;
+  text-decoration: none;
+  background-color: #00d4ff;
+  color: black;
+  text-shadow: 1px 1px 1px;
+  border-radius: 10px;
+  width: 20%;
+  padding: 10px 0px 10px 0px;
+}
+
+.ability a {
+  text-align: center;
+  text-decoration: none;
+  background-color: #00d4ff;
+  color: black;
+  text-shadow: 1px 1px 1px;
+  border-radius: 10px;
+  width: 20%;
+  padding: 10px 0px 10px 0px;
 }
 
 .stats div {
@@ -324,7 +357,8 @@
   box-shadow: 2px 2px 2px white;
   border: 1px solid red;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
+  padding-left: 10px;
   height: 26px;
   margin-top: 0px;
 }
@@ -335,7 +369,8 @@
   box-shadow: 2px 2px 2px lightgreen;
   border: 1px solid darkgreen;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
+  padding-left: 10px;
   height: 26px;
   margin-top: 0px;
 }
@@ -346,7 +381,8 @@
   box-shadow: 2px 2px 2px teal;
   border: 1px solid darkblue;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
+  padding-left: 10px;
   height: 26px;
   margin-top: 0px;
 }
@@ -357,7 +393,8 @@
   box-shadow: 2px 2px 2px lightyellow;
   border: 1px solid orange;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
+  padding-left: 10px;
   height: 26px;
   margin-top: 0px;
 }
@@ -368,7 +405,8 @@
   box-shadow: 2px 2px 2px yellow;
   border: 1px solid darkorange;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
+  padding-left: 10px;
   height: 26px;
   margin-top: 0px;
 }
@@ -379,7 +417,8 @@
   box-shadow: 2px 2px 2px pink;
   border: 1px solid darkred;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
+  padding-left: 10px;
   height: 26px;
   margin-top: 0px;
 }
