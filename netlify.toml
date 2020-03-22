@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish="pokedex-app/build/"
+  base = "pokedex-app/"
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
