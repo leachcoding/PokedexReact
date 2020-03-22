@@ -1,24 +1,24 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router';
-import Berry from './Berry.js';
+import Location from './Location.js';
 
-function Berries() {
-  const [berries, setBerries] = useState([]);
+function Locations() {
+  const [locations, setMoves] = useState([]);
   const [pages, setPages] = useState(0);
 
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get(`https://pokeapi.co/api/v2/berry?offset=${pages}&limit=20/`)
+        .get(`https://pokeapi.co/api/v2/location?offset=${pages}&limit=20/`)
         .then(res => {
-          let berryValue = res.data.results;
-          berryValue.map(berry => {
-            let regexPat = /\/berry\/(\d+)\//;
-            let id = berry.url.match(regexPat)[1];
-            return(berry['id'] = id);
+          let locationValue = res.data.results;
+          locationValue.map(location => {
+            let regexPat = /\/location\/(\d+)\//;
+            let id = location.url.match(regexPat)[1];
+            return(location['id'] = id);
           })
-          setBerries(berryValue);
+          setMoves(locationValue);
           console.log(res.data.results);
         })
         .catch(err => {
@@ -28,7 +28,7 @@ function Berries() {
     fetchData();
   },[pages]);
 
-  console.log(berries);
+  console.log(locations);
   return (
     <>
       <div className = 'paginationRow'>
@@ -38,7 +38,7 @@ function Berries() {
         <button onClick={() => setPages(pages + 100)}>Next + 5</button>
       </div>
       <div className='cards'>
-        {berries.map(item => <Berry berries={item} key={item.name}/>)}
+        {locations.map(item => <Location locations={item} key={item.name}/>)}
       </div>
       <div className = 'paginationRow'>
         <button onClick={() => setPages(pages -100)}>Prev - 5</button>
@@ -51,4 +51,4 @@ function Berries() {
 }
 
 
-export default withRouter(Berries);
+export default withRouter(Locations);
