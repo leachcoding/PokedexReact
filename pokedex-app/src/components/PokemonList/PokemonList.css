@@ -4,4 +4,26 @@
   justify-content: center;
   width: 97%;
   margin: 5px 1% 5px 1%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px lightgray;
+  padding: 5px 0px 5px 0px;
+}
+
+.paginationRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  margin: 5px 1% 5px 1%;
+}
+
+.paginationRow button{
+  margin: 0px 5px 0px 5px;
+  width: 15%;
+  height: 25px;
+  background-color: red;
+  box-shadow: 2px 2px 2px pink;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
 }

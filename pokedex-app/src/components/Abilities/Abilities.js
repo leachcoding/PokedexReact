@@ -31,17 +31,21 @@ function Abilities() {
 
   return(
     <>
+    <div className = 'paginationRow'>
       <button onClick={() => setPages(pages -100)}>Prev - 5</button>
       <button onClick={() => setPages(pages -20)}>Prev</button>
       <button onClick={() => setPages(pages + 20)}>Next</button>
       <button onClick={() => setPages(pages + 100)}>Next + 5</button>
+    </div>
       <div className='cards'>
         {abilities.map(item => <Ability abilities={item} key={item.name}/>)}
       </div>
-      <button onClick={() => setPages(pages -100)}>Prev - 5</button>
-      <button onClick={() => setPages(pages -20)}>Prev</button>
-      <button onClick={() => setPages(pages + 20)}>Next</button>
-      <button onClick={() => setPages(pages + 100)}>Next + 5</button>
+      <div className = 'paginationRow'>
+        <button onClick={() => setPages(pages -100)}>Prev - 5</button>
+        <button onClick={() => setPages(pages -20)}>Prev</button>
+        <button onClick={() => setPages(pages + 20)}>Next</button>
+        <button onClick={() => setPages(pages + 100)}>Next + 5</button>
+      </div>
     </>
   );
 }
