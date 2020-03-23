@@ -7,7 +7,7 @@ import MachinesSearch from '../Search/MachinesSearch';
 function Machines() {
   const [machines, setMachines] = useState([]);
   const [pages, setPages] = useState(0);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = () => {
       axios
@@ -21,6 +21,7 @@ function Machines() {
           })
           setMachines(machineValue);
           console.log(res.data.results);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -30,6 +31,7 @@ function Machines() {
   },[pages]);
 
   console.log(machines);
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
       <div className = 'paginationRow'>

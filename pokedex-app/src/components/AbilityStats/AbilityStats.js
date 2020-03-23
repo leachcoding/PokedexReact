@@ -9,6 +9,7 @@ const AbilityStats = (props) => {
   const [ability, setAbility] = useState([]);
   const [text, setText] = useState([]);
   const [pokemon, setPokemon] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const abilityId = props.match.params.id;
 
@@ -25,6 +26,7 @@ const AbilityStats = (props) => {
           //Pokemon
           console.log(res.data.pokemon);
           setPokemon(res.data.pokemon);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -42,7 +44,7 @@ const AbilityStats = (props) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
   }
-
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return(
     <>
       <div className='types'>

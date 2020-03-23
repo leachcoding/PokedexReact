@@ -7,6 +7,7 @@ import MovesSearch from '../Search/MovesSearch';
 function Moves() {
   const [moves, setMoves] = useState([]);
   const [pages, setPages] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = () => {
@@ -21,6 +22,7 @@ function Moves() {
           })
           setMoves(moveValue);
           console.log(res.data.results);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -30,6 +32,7 @@ function Moves() {
   },[pages]);
 
   console.log(moves);
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
       <div className = 'paginationRow'>

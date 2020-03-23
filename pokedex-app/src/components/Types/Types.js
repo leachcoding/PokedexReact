@@ -7,6 +7,7 @@ import TypesSearch from '../Search/TypesSearch';
 function Types() {
   const [types, setTypes] = useState([]);
   const [pages, setPages] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = () => {
@@ -21,6 +22,7 @@ function Types() {
           })
           setTypes(typeValue);
           console.log(res.data.results);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -30,6 +32,7 @@ function Types() {
   },[pages]);
 
   console.log(types);
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
       <div className = 'paginationRow'>

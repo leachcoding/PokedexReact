@@ -6,6 +6,7 @@ import '../PokemonList/PokemonList.css';
 
 const Generations = (props) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const genId = props.match.params.id;
   useEffect(() => {
@@ -21,6 +22,7 @@ const Generations = (props) => {
             return (pokemon['id'] = id);
           })
           setData(sortedPokemon);
+          setLoading(false);
         });
     }
     const sortPokemon = (a, b) => {
@@ -33,6 +35,7 @@ const Generations = (props) => {
   }, [genId]);
 
   console.log(data, "LINE 30");
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
     <div className='cards'>

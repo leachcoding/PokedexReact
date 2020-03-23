@@ -7,6 +7,7 @@ import AbilitiesSearch from '../Search/AbilitiesSearch';
 function Abilities() {
   const [abilities, setAbilities] = useState([]);
   const [pages, setPages] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = () => {
@@ -21,6 +22,7 @@ function Abilities() {
           })
           setAbilities(abilityValue);
           console.log(abilityValue);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -29,7 +31,7 @@ function Abilities() {
     fetchData();
   }, [pages]);
   console.log(abilities);
-
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return(
     <>
     <div className = 'paginationRow'>

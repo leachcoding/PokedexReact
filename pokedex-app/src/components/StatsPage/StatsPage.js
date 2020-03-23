@@ -16,6 +16,7 @@ const StatsPage = (props) => {
   const [stats, setStats] = useState([]);
   const [statsBase, setStatsBase] = useState([]);
   const [types, setTypes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const maxStats = [180, 250, 194, 250, 190, 255];
 
@@ -74,7 +75,7 @@ const StatsPage = (props) => {
           } else {
             setTypes(res.data.types[0].type.name)
           }
-
+          setLoading(false);
         });
     }
 
@@ -82,6 +83,7 @@ const StatsPage = (props) => {
   }, [pokeId]);
   console.log(moves);
   console.log(abilityVal, abilityUrl, 'val url');
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
     <div className='statsPage'>

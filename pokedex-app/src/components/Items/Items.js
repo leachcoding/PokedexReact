@@ -7,6 +7,7 @@ import ItemsSearch from '../Search/ItemsSearch.js';
 function Items() {
   const [items, setItems] = useState([]);
   const [pages, setPages] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = () => {
@@ -21,6 +22,7 @@ function Items() {
           })
           setItems(itemValue);
           console.log(res.data.results);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -30,6 +32,7 @@ function Items() {
   },[pages]);
 
   console.log(items);
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
       <div className = 'paginationRow'>

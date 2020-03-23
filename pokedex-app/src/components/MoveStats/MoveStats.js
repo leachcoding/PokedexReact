@@ -6,6 +6,7 @@ const MoveStats = (props) => {
   const [moves, setMoves] = useState([]);
   const [types, setTypes] = useState([]);
   const [text, setText] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const moveId = props.match.params.id;
 
@@ -28,6 +29,7 @@ const MoveStats = (props) => {
           setTypes(res.data.type);
           // Text
           setText(res.data.flavor_text_entries[21] || res.data.flavor_text_entries[2]);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -40,6 +42,7 @@ const MoveStats = (props) => {
   console.log(moves);
   console.log(types);
   console.log(text);
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
       <div className='types'>

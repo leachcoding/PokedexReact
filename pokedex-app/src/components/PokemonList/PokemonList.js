@@ -7,6 +7,7 @@ import './PokemonList.css';
 
 function PokemonList() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [pages, setPages] = useState(0);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function PokemonList() {
             return (pokemon['id'] = id);
           })
           setData(pokemonValue)
+          setLoading(false);
         })
         .catch(err => {
           console.log("ERROR", err);
@@ -34,6 +36,7 @@ function PokemonList() {
   }, [pages]);
 
   console.log(data, "This is data line 58");
+    if(loading) return <p>I'm Loading! Please be patient</p>;
     return (
       <>
       <div className = 'paginationRow'>

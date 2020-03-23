@@ -7,6 +7,7 @@ import MoveStats from '../MoveStats/MoveStats.js';
 
 const TypeStats = (props) => {
   const [type, setType] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [move, setMove] = useState([]);
   const [pokemon, setPokemon] = useState([]);
 
@@ -22,6 +23,7 @@ const TypeStats = (props) => {
           setType(res.data);
           setMove(res.data.moves.map(el => el.name))
           setPokemon(res.data.pokemon.map(el => el.pokemon.name));
+          setLoading(false);
         })
         .catch(err => {
           console.log(err, 'err');
@@ -37,7 +39,7 @@ const TypeStats = (props) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
   }
-
+  if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
       <div className='types'>
