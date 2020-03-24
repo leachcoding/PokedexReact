@@ -4,12 +4,12 @@
   border-radius: 15px;
   box-shadow: 2px 2px 2px grey;
   border: 1px solid black;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .statsDiv {
   width: 100%;
-  margin: 10px 1% 10px 1%;
+  margin: 10px 1% 10px 0%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -17,7 +17,7 @@
 }
 
 .statsDiv .imgDiv {
-  width: 45%;
+  width: 43%;
   display: flex;
   flex-direction: column;
   margin: 5px 15px 5px 0px;
@@ -25,6 +25,7 @@
 
 .statsDiv .imgDiv div {
   display: flex;
+  font-size: 10px;
 }
 
 .statsDiv .imgDiv div img {
@@ -33,7 +34,7 @@
 }
 
 .statsDiv .infoDiv {
-  width: 20%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,30 +80,32 @@
   justify-content: flex-start;
 }
 
+.heldItems p {
+
+}
+
 .types .bug {
   background-color: #c6d16e;
   background-image: linear-gradient(90deg, #c6d16e 12%, #a8b820 50%, #6d7815 100%);
   border: 2px solid #6d7815;
   box-shadow: 3px 3px 3px #c6d16e;
   border-radius: 5px;
-  width: 75px;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
-
 .types .dark {
   background-color: #a29288;
   background-image: linear-gradient(90deg, #a29288 12%, #705848 50%, #49392f 100%);
   border: 2px solid #49392f;
   box-shadow: 3px 3px 3px #a29288;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
+  color: white;
 }
 .types .dragon {
   background-color: #a27dfa;
@@ -110,11 +113,10 @@
   border: 2px solid #4924a1;
   box-shadow: 3px 3px 3px #a27dfa;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .electric {
   background-color: #fae078;
@@ -122,11 +124,10 @@
   border: 2px solid #a1871f;
   box-shadow: 3px 3px 3px #fae078;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .fairy {
   background-color: #f4bdc9;
@@ -134,11 +135,10 @@
   border: 2px solid #9b6470;
   box-shadow: 3px 3px 3px #f4bdc9;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .fighting {
   background-color: #d67873;
@@ -146,11 +146,11 @@
   border: 2px solid #7d1f1a;
   box-shadow: 3px 3px 3px #d67873;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
+  color: white;
 }
 .types .fire {
   background-color: #f5ac78;
@@ -158,11 +158,10 @@
   border: 2px solid #9c531f;
   box-shadow: 3px 3px 3px #f5ac78;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .flying {
   background-color: #c6b7f5;
@@ -170,11 +169,11 @@
   border: 2px solid #6d5e9c;
   box-shadow: 3px 3px 3px #c6b7f5;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
+  color: white;
 }
 .types .ghost {
   background-color: #a292bc;
@@ -182,11 +181,10 @@
   border: 2px solid #493963;
   box-shadow: 3px 3px 3px #a292bc;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .grass {
   background-color: #a7db8d;
@@ -194,11 +192,10 @@
   border: 2px solid #4e8234;
   box-shadow: 3px 3px 3px #a7db8d;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .ground {
   background-color: #ebd69d;
@@ -206,11 +203,10 @@
   border: 2px solid #927d44;
   box-shadow: 3px 3px 3px #ebd69d;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .ice {
   background-color: #bce6e6;
@@ -218,11 +214,10 @@
   border: 2px solid #638d8d;
   box-shadow: 3px 3px 3px #bce6e6;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .normal {
   background-color: #c6c6a7;
@@ -230,11 +225,10 @@
   border: 2px solid #6d6d4e;
   box-shadow: 3px 3px 3px #c6c6a7;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .poison {
   background-color: #c183c1;
@@ -242,11 +236,11 @@
   border: 2px solid #682a68;
   box-shadow: 3px 3px 3px #c183c1;
   border-radius: 5px;
-  width: 75px;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
+  color: white;
 }
 .types .psychic {
   background-color: #fa92b2;
@@ -254,11 +248,10 @@
   border: 2px solid #a13959;
   box-shadow: 3px 3px 3px #fa92b2;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .rock {
   background-color: #d1c17d;
@@ -266,11 +259,10 @@
   border: 2px solid #786824;
   box-shadow: 3px 3px 3px #d1c17d;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .steel {
   background-color: #d1d1e0;
@@ -278,11 +270,10 @@
   border: 2px solid #787887;
   box-shadow: 3px 3px 3px #d1d1e0;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 .types .water {
   background-color: #9db7f5;
@@ -290,11 +281,10 @@
   border: 2px solid #445e9c;
   box-shadow: 3px 3px 3px #9db7f5;
   border-radius: 5px;
-  width: 35%;
+  width: 75%;
   height: 35px;
   text-align: center;
-  align-self: center;
-  font-weight: bold;
+  padding-top: 15px;
 }
 
 .stats {
@@ -323,7 +313,6 @@
   text-decoration: none;
   background-color: #00d4ff;
   color: black;
-  text-shadow: 1px 1px 1px;
   border-radius: 10px;
   width: 20%;
   padding: 10px 0px 10px 0px;
@@ -334,7 +323,6 @@
   text-decoration: none;
   background-color: #00d4ff;
   color: black;
-  text-shadow: 1px 1px 1px;
   border-radius: 10px;
   width: 20%;
   padding: 10px 0px 10px 0px;
@@ -357,10 +345,11 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px white;
   border: 1px solid red;
-  font-size: 12px;
+  font-size: 10px;
   text-align: start;
   padding-left: 10px;
-  height: 26px;
+  padding-top: 5px;
+  height: 21px;
   margin-top: 0px;
 }
 .special-defense p{
@@ -369,10 +358,11 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px lightgreen;
   border: 1px solid darkgreen;
-  font-size: 12px;
+  font-size: 10px;
   text-align: start;
   padding-left: 10px;
-  height: 26px;
+  padding-top: 5px;
+  height: 21px;
   margin-top: 0px;
 }
 .special-attack p{
@@ -381,10 +371,11 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px teal;
   border: 1px solid darkblue;
-  font-size: 12px;
+  font-size: 10px;
   text-align: start;
   padding-left: 10px;
-  height: 26px;
+  padding-top: 5px;
+  height: 21px;
   margin-top: 0px;
 }
 .defense p{
@@ -393,10 +384,11 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px lightyellow;
   border: 1px solid orange;
-  font-size: 12px;
+  font-size: 10px;
   text-align: start;
   padding-left: 10px;
-  height: 26px;
+  padding-top: 5px;
+  height: 21px;;
   margin-top: 0px;
 }
 .attack p{
@@ -405,10 +397,11 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px yellow;
   border: 1px solid darkorange;
-  font-size: 12px;
+  font-size: 10px;
   text-align: start;
   padding-left: 10px;
-  height: 26px;
+  padding-top: 5px;
+  height: 21px;
   margin-top: 0px;
 }
 .hp p{
@@ -417,10 +410,11 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px pink;
   border: 1px solid darkred;
-  font-size: 12px;
+  font-size: 10px;
   text-align: start;
   padding-left: 10px;
-  height: 26px;
+  padding-top: 5px;
+  height: 21px;
   margin-top: 0px;
 }
 

@@ -83,6 +83,15 @@ const StatsPage = (props) => {
   }, [pokeId]);
   console.log(moves);
   console.log(abilityVal, abilityUrl, 'val url');
+
+  let idVal = '';
+  if(data.id < 10) {
+    idVal = '00' + data.id;
+  } else if(data.id < 100) {
+    idVal = '0' + data.id;
+  } else {
+    idVal = data.id;
+  }
   if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
@@ -101,7 +110,7 @@ const StatsPage = (props) => {
           </div>
         </div>
         <div className='infoDiv'>
-          <p>Name: {capitalize(data.name)} -- #{data.id}</p>
+          <p>{capitalize(data.name)} #{idVal}</p>
           <p>Base XP: {data.base_experience}</p>
           <p>Height: {(data.height * 0.1).toFixed(1)}m</p>
           <p>Weight: {(data.weight * 0.1).toFixed(1)}kg</p>
