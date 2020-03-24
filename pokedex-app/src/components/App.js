@@ -8,12 +8,16 @@ import MoveStats from './MoveStats/MoveStats.js'
 import Types from './Types/Types.js';
 import TypeStats from './TypeStats/TypeStats.js'
 import Berries from './Berries/Berries.js';
+import BerryStats from './BerryStats/BerryStats.js'
 import Abilities from './Abilities/Abilities.js';
 import AbilityStats from './AbilityStats/AbilityStats.js';
 import About from './About/About.js';
 import Locations from './Locations/Locations.js';
+import LocationStats from './LocationStats/LocationStats.js';
 import Machines from './Machines/Machines.js';
+import MachineStats from './MachineStats/MachineStats.js';
 import Items from './Items/Items.js';
+import ItemStats from './ItemStats/ItemStats.js';
 import Footer from './Footer/Footer.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -31,13 +35,17 @@ function App() {
             <Route path='/moves/:id' component={MoveStats} />
             <Route exact path='/types' component={Types} />
             <Route path ='/types/:id' component={TypeStats} />
-            <Route path='/berries' component={Berries} />
+            <Route exact path='/berries' component={Berries} />
+            <Route path='/berries/:id' component={BerryStats} />
             <Route exact path='/abilities' component={Abilities} />
             <Route path='/abilities/:id' component={AbilityStats} />
             <Route path='/about' component={About} />
-            <Route path='/locations' component={Locations} />
-            <Route path='/machines' component={Machines} />
-            <Route path='/items' component={Items} />
+            <Route exact path='/locations' component={Locations} />
+            <Route path='/locations/:id' component={LocationStats} />
+            <Route exact path='/machines' component={Machines} />
+            <Route path='/machines/:id' component={MachineStats} />
+            <Route exact path='/items' component={Items} />
+            <Route path='/items/:id' component={ItemStats} />
           </Switch>
           <Footer />
         </div>

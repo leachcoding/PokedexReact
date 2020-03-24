@@ -26,7 +26,7 @@ const TypesSearch = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input placeholder='Search Pokemon by name or id' value={query} onChange={handleChange}/>
+        <input placeholder='Search type by name or id' value={query} onChange={handleChange}/>
         <button className='submitButton'>Search</button>
       </form>
       <Route exact path="types/:id" component={TypeStats} />
