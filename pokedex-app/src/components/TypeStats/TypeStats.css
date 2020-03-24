@@ -1,0 +1,14 @@
+.moveType, .pokemonType {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+  transition: 0.4s;
+}
+
+.moveType:hover, .pokemonType:hover {
+  color: blue;
+}
+
+a {
+  text-decoration: none;
+}

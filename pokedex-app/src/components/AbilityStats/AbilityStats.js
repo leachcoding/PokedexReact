@@ -49,13 +49,13 @@ const AbilityStats = (props) => {
     <>
       <div className='types'>
         <p className='text'>Ability: {capitalize(ability.name)}</p>
-        <p className='text'>Effect: {text.flavor_text}</p>
+        <p className='text'>Effect: <span>{text.flavor_text}</span></p>
         <p className='text'>Pokemon:</p>
         <div className='pokemonRow'>
         {pokemon.map(e => {
           return (
             <>
-            <Link to={`/detail/${e.pokemon.name}`}><p>{capitalize(e.pokemon.name)}</p></Link>
+            <Link to={`/detail/${e.pokemon.name}`}><p className='pokemonType'>{capitalize(e.pokemon.name)}</p></Link>
             <Route exact path='detail/:id' component={StatsPage}/>
             </>
           );

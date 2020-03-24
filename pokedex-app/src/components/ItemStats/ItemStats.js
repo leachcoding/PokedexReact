@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
 import {Link, Route} from 'react-router-dom';
+import './ItemStats.css';
 
 const ItemStats = (props) => {
   const [item, setItem] = useState([]);
@@ -37,11 +38,13 @@ const ItemStats = (props) => {
 
   return (
     <>
-      <div className='types'>
+      <div className='item'>
         <img src={item.sprites.default} alt={item.name} />
-        <p className='text'>Name: {capitalize(item.name)}</p>
-        <p className='text'>Id: {item.id}</p>
-        <p className='text'>Cost: {item.cost}</p>
+        <div className='textCol'>
+          <p className='text'>Name: {capitalize(item.name)}</p>
+          <p className='text'>Id: {item.id}</p>
+          <p className='text'>Cost: {item.cost}</p>
+        </div>
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 .pokemonRow {
   display: flex;
   flex-flow: row wrap;
+  margin: 0px 5px 10px 5px;
 }
 .pokemonRow p {
-  margin: 0px 5px 0px 5px;
+  margin: 0px 15px 0px 10px;
 }

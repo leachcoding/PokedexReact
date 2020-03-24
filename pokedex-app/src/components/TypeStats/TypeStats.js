@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import {Link, Route} from 'react-router-dom';
 import StatsPage from '../StatsPage/StatsPage.js';
 import MoveStats from '../MoveStats/MoveStats.js';
+import './TypeStats.css';
 
 const TypeStats = (props) => {
   const [type, setType] = useState([]);
@@ -43,14 +44,13 @@ const TypeStats = (props) => {
   return (
     <>
       <div className='types'>
-        <p className='text'>{capitalize(type.name)}</p>
-        <p className='text'>{type.id}</p>
+        <p className='text'>{type.id} -- {capitalize(type.name)}</p>
         <p className='text'>Moves:</p>
         <div className='pokemonRow'>
         {move.map(el => {
           return (
             <>
-            <Link to={`/moves/${el}`}><p>{capitalize(el)}</p></Link>
+            <Link to={`/moves/${el}`}><p className='moveType'>{capitalize(el)}</p></Link>
             <Route exact path='moves/:id' component={MoveStats}/>
             </>
           );
@@ -61,7 +61,7 @@ const TypeStats = (props) => {
         {pokemon.map(el => {
           return (
             <>
-            <Link to={`/detail/${el}`}><p>{capitalize(el)}</p></Link>
+            <Link to={`/detail/${el}`}><p className='pokemonType'>{capitalize(el)}</p></Link>
             <Route exact path='detail/:id' component={StatsPage}/>
             </>
           );

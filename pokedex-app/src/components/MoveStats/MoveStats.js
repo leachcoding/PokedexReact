@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
+import './MoveStats.css';
 
 const MoveStats = (props) => {
   const [moves, setMoves] = useState([]);
@@ -45,14 +46,18 @@ const MoveStats = (props) => {
   if(loading) return <p>I'm Loading! Please be patient</p>;
   return (
     <>
-      <div className='types'>
-        <p className='text'>Move: {capitalize(moves.name)}</p>
-        <p className='text'>Accuracy: {moves.accuracy}</p>
-        <p className='text'>Power: {moves.power}</p>
-        <p className='text'>PP: {moves.pp}</p>
-        <p className='text'>Type: </p>
-        <p className={types.name}>{capitalize(types.name)}</p>
-        <p className='text'>Desc: {text.flavor_text}</p>
+      <div className='moves'>
+        <div className='leftMoveContainer'>
+          <p className='text'>Move: {capitalize(moves.name)}</p>
+          <p className='text'>Type: </p>
+          <p className={types.name}>{capitalize(types.name)}</p>
+        </div>
+        <div className='rightMoveContainer'>
+          <p className='text'>Accuracy: {moves.accuracy}</p>
+          <p className='text'>Power: {moves.power}</p>
+          <p className='text'>PP: {moves.pp}</p>
+          <p className='text'>Desc: {text.flavor_text}</p>
+        </div>
       </div>
     </>
   );
