@@ -10,6 +10,8 @@ class Navigation extends Component {
           <Link to={'/'}><a>Home</a></Link>
           <a href="https://pokeapi.co/">API</a>
           <Link to={'/about'}><a>About</a></Link>
+          <Link to={'/login'}><a>Login</a></Link>
+          <Link to={'/signup'}><a>Signup</a></Link>
         </div>
         <div className="midNav">
           <Link to={'/generations/1'}><a>Gen 1</a></Link>
@@ -29,7 +31,13 @@ class Navigation extends Component {
           <Link to={'/machines'}><a>Machines</a></Link>
           <Link to={'/locations'}><a>Locations</a></Link>
         </div>
-        <div className="blackBar"></div>
+        <div className="blackBar">
+          <Link to={'/backpack'}><a>Backpack:</a></Link>
+          <Link to={'/backpack/items'}><a>Items</a></Link>
+          <Link to={'/backpack/berries'}><a>Berries</a></Link>
+          <Link to={'/backpack/machines'}><a>Machines</a></Link>
+          <Link to={'/favorites'}><a>Favs: <img src="https://www.pikpng.com/pngl/m/137-1373971_8-bit-pixel-art-pokemon-clipart.png" alt="8 Bit Pixel Art Pokemon Clipart@pikpng.com"/></a></Link>
+        </div>
       </nav>
     );
   }

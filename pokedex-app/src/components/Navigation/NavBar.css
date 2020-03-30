@@ -27,7 +27,7 @@ nav {
   justify-content: space-around;
 }
 
-.topNav a, .midNav a, .bottomNav a{
+.topNav a, .midNav a, .bottomNav a, .blackBar a{
   color: white;
   text-decoration: none;
   padding: 3px 15px 3px 15px;
@@ -36,13 +36,21 @@ nav {
   opacity: 1;
 }
 
-.topNav a:hover, .midNav a:hover, .bottomNav a:hover {
+.topNav a:hover, .midNav a:hover, .bottomNav a:hover, .blackBar a:hover {
   color: #FF0000;
   background-color: white;
 }
 
 .blackBar {
-  width: 100%;
   background-color: black;
-  height: 5vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+}
+
+.blackBar a img {
+  height: 20px;
+  border-radius: 100%;
 }

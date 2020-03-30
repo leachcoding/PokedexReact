@@ -18,6 +18,9 @@ import Machines from './Machines/Machines.js';
 import MachineStats from './MachineStats/MachineStats.js';
 import Items from './Items/Items.js';
 import ItemStats from './ItemStats/ItemStats.js';
+import Backpack from './Backpack/Backpack.js';
+import BackpackItems from './Backpack/Items/Items.js';
+import BackpackBerries from './Backpack/Berries/Berries.js';
 import Footer from './Footer/Footer.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -46,6 +49,9 @@ function App() {
             <Route path='/machines/:id' component={MachineStats} />
             <Route exact path='/items' component={Items} />
             <Route path='/items/:id' component={ItemStats} />
+            <Route exact path ='/backpack' component={Backpack} />
+            <Route exact path='/backpack/items' component={BackpackItems} />
+            <Route exact path='/backpack/berries' component={BackpackBerries} />
           </Switch>
           <Footer />
         </div>
