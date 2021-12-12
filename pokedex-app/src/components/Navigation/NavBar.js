@@ -11,7 +11,7 @@ class Navigation extends Component {
           <a target="_blank" href="https://pokeapi.co/">API</a>
           <Link to={'/about'}>About</Link>
           <Link to={'/login'}>Login</Link>
-          <Link to={'/signup'}>Signup</Link>
+          <Link to={'/register'}>Signup</Link>
         </div>
         <div className="midNav">
           <Link to={'/generations/1'}>Gen 1</Link>
