@@ -36,7 +36,7 @@ class Navigation extends Component {
           <Link to={'/backpack/items'}>Items</Link>
           <Link to={'/backpack/berries'}>Berries</Link>
           <Link to={'/backpack/machines'}>Machines</Link>
-          <Link to={'/favorites'}>Favs: <img src="https://www.pikpng.com/pngl/m/137-1373971_8-bit-pixel-art-pokemon-clipart.png" alt="8 Bit Pixel Art Pokemon Clipart@pikpng.com"/></Link>
+          <Link to={'/backpack/favorites'}>Favs: <img src="https://www.pikpng.com/pngl/m/137-1373971_8-bit-pixel-art-pokemon-clipart.png" alt="8 Bit Pixel Art Pokemon Clipart@pikpng.com"/></Link>
         </div>
       </nav>
     );

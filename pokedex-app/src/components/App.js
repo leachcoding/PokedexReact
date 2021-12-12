@@ -23,6 +23,8 @@ import ItemStats from './ItemStats/ItemStats.js';
 import Backpack from './Backpack/Backpack.js';
 import BackpackItems from './Backpack/Items/Items.js';
 import BackpackBerries from './Backpack/Berries/Berries.js';
+import BackpackMachines from './Backpack/Machines/Machines.js';
+import BackpackFavorites from './Backpack/Favorites/Favorites.js';
 import Footer from './Footer/Footer.js';
 import PokeError from './PokeError/PokeError.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -58,6 +60,8 @@ function App() {
             <ProtectedRoute exact path ='/backpack' component={Backpack} />
             <ProtectedRoute exact path='/backpack/items' component={BackpackItems} />
             <ProtectedRoute exact path='/backpack/berries' component={BackpackBerries} />
+            <ProtectedRoute exact path='/backpack/machines' component={BackpackMachines} />
+            <ProtectedRoute exact path='/backpack/favorites' component={BackpackFavorites} />
             <Route path="*" component={PokeError} />
           </Switch>
           <Footer />
