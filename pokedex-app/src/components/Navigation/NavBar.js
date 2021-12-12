@@ -8,7 +8,7 @@ class Navigation extends Component {
       <nav>
         <div className="topNav">
           <Link to={'/'}>Home</Link>
-          <a target="_blank" href="https://pokeapi.co/">API</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://pokeapi.co/">API</a>
           <Link to={'/about'}>About</Link>
           <Link to={'/login'}>Login</Link>
           <Link to={'/register'}>Signup</Link>
