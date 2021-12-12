@@ -22,3 +22,17 @@ button {
   border-radius: 5px;
   text-align: center;
 }
+
+@media screen and (max-width: 675px){
+  input {
+    width: 70%;
+  }
+  button {
+    width: 25%;
+    background-color: red;
+    box-shadow: 2px 2px 2px pink;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
