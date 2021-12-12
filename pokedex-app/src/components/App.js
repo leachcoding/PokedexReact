@@ -1,5 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation/NavBar.js';
+import Login from './Auth/Login.js';
+import Register from './Auth/Register.js';
 import PokemonList from './PokemonList/PokemonList.js';
 import StatsPage from './StatsPage/StatsPage.js';
 import Generations from './Generations/Generations.js';
@@ -22,7 +24,9 @@ import Backpack from './Backpack/Backpack.js';
 import BackpackItems from './Backpack/Items/Items.js';
 import BackpackBerries from './Backpack/Berries/Berries.js';
 import Footer from './Footer/Footer.js';
+import PokeError from './PokeError/PokeError.js';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ProtectedRoute from './Auth/ProtectedRoute.js';
 
 function App() {
 
@@ -31,6 +35,8 @@ function App() {
         <div>
           <Navigation />
           <Switch>
+            <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
             <Route exact path='/' render={()=> <PokemonList />}/>
             <Route path='/detail/:id' component={StatsPage} />
             <Route path='/generations/:id' component={Generations} />
@@ -49,9 +55,10 @@ function App() {
             <Route path='/machines/:id' component={MachineStats} />
             <Route exact path='/items' component={Items} />
             <Route path='/items/:id' component={ItemStats} />
-            <Route exact path ='/backpack' component={Backpack} />
-            <Route exact path='/backpack/items' component={BackpackItems} />
-            <Route exact path='/backpack/berries' component={BackpackBerries} />
+            <ProtectedRoute exact path ='/backpack' component={Backpack} />
+            <ProtectedRoute exact path='/backpack/items' component={BackpackItems} />
+            <ProtectedRoute exact path='/backpack/berries' component={BackpackBerries} />
+            <Route path="*" component={PokeError} />
           </Switch>
           <Footer />
         </div>

@@ -26,7 +26,7 @@ const SearchForm = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input placeholder='Search Pokemon by name or id' value={query} onChange={handleChange}/>
+        <input placeholder='Search Pokemon by EXACT Name or ID' value={query} onChange={handleChange}/>
         <button className='submitButton'>Search</button>
       </form>
       <Route exact path="detail/:id" component={StatsPage} />
