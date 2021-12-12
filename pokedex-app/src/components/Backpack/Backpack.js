@@ -3,6 +3,7 @@ import axios from 'axios';
 import {withRouter} from 'react-router';
 import BackpackItems from './Items/Items.js';
 import BackpackBerries from './Berries/Berries.js';
+import BackpackMachines from './Machines/Machines.js';
 
 function Backpack() {
   return (
@@ -15,7 +16,7 @@ function Backpack() {
         Berries: <BackpackBerries />
         </div>
         <div className='machinebackpack'>
-        Machines: {/*<BackpackMachines />*/}
+        Machines: <BackpackMachines />
         </div>
       </div>
     </>

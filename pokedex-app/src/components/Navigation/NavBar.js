@@ -7,36 +7,36 @@ class Navigation extends Component {
     return (
       <nav>
         <div className="topNav">
-          <Link to={'/'}><a>Home</a></Link>
-          <a href="https://pokeapi.co/">API</a>
-          <Link to={'/about'}><a>About</a></Link>
-          <Link to={'/login'}><a>Login</a></Link>
-          <Link to={'/signup'}><a>Signup</a></Link>
+          <Link to={'/'}>Home</Link>
+          <a target="_blank" href="https://pokeapi.co/">API</a>
+          <Link to={'/about'}>About</Link>
+          <Link to={'/login'}>Login</Link>
+          <Link to={'/register'}>Signup</Link>
         </div>
         <div className="midNav">
-          <Link to={'/generations/1'}><a>Gen 1</a></Link>
-          <Link to={'/generations/2'}><a>Gen 2</a></Link>
-          <Link to={'/generations/3'}><a>Gen 3</a></Link>
-          <Link to={'/generations/4'}><a>Gen 4</a></Link>
-          <Link to={'/generations/5'}><a>Gen 5</a></Link>
-          <Link to={'/generations/6'}><a>Gen 6</a></Link>
-          <Link to={'/generations/7'}><a>Gen 7</a></Link>
+          <Link to={'/generations/1'}>Gen 1</Link>
+          <Link to={'/generations/2'}>Gen 2</Link>
+          <Link to={'/generations/3'}>Gen 3</Link>
+          <Link to={'/generations/4'}>Gen 4</Link>
+          <Link to={'/generations/5'}>Gen 5</Link>
+          <Link to={'/generations/6'}>Gen 6</Link>
+          <Link to={'/generations/7'}>Gen 7</Link>
         </div>
         <div className='bottomNav'>
-          <Link to={'/moves'}><a>Moves</a></Link>
-          <Link to={'/abilities'}><a>Abilities</a></Link>
-          <Link to={'/types'}><a>Types</a></Link>
-          <Link to={'/berries'}><a>Berries</a></Link>
-          <Link to={'/items'}><a>Items</a></Link>
-          <Link to={'/machines'}><a>Machines</a></Link>
-          <Link to={'/locations'}><a>Locations</a></Link>
+          <Link to={'/moves'}>Moves</Link>
+          <Link to={'/abilities'}>Abilities</Link>
+          <Link to={'/types'}>Types</Link>
+          <Link to={'/berries'}>Berries</Link>
+          <Link to={'/items'}>Items</Link>
+          <Link to={'/machines'}>Machines</Link>
+          <Link to={'/locations'}>Locations</Link>
         </div>
         <div className="blackBar">
-          <Link to={'/backpack'}><a>Backpack:</a></Link>
-          <Link to={'/backpack/items'}><a>Items</a></Link>
-          <Link to={'/backpack/berries'}><a>Berries</a></Link>
-          <Link to={'/backpack/machines'}><a>Machines</a></Link>
-          <Link to={'/favorites'}><a>Favs: <img src="https://www.pikpng.com/pngl/m/137-1373971_8-bit-pixel-art-pokemon-clipart.png" alt="8 Bit Pixel Art Pokemon Clipart@pikpng.com"/></a></Link>
+          <Link to={'/backpack'}>Backpack:</Link>
+          <Link to={'/backpack/items'}>Items</Link>
+          <Link to={'/backpack/berries'}>Berries</Link>
+          <Link to={'/backpack/machines'}>Machines</Link>
+          <Link to={'/backpack/favorites'}>Favs: <img src="https://www.pikpng.com/pngl/m/137-1373971_8-bit-pixel-art-pokemon-clipart.png" alt="8 Bit Pixel Art Pokemon Clipart@pikpng.com"/></Link>
         </div>
       </nav>
     );

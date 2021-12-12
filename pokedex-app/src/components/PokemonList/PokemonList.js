@@ -17,6 +17,7 @@ function PokemonList() {
         .then(res => {
           // console.log(res.data, "THIS IS POKEMON LIST RES.DATA");
           // console.log(res.data.results, "THIS IS POKEMON LIST RES.DATA.RESULTS");
+          console.log(pages)
           let pokemonValue = res.data.results;
           pokemonValue.map(pokemon => {
             let regexPat = /\/pokemon\/(\d+)\//;
@@ -35,26 +36,26 @@ function PokemonList() {
     // console.log(data, "THIS IS DATA");
   }, [pages]);
 
-  console.log(data, "This is data line 58");
+  // console.log(data, "This is data line 58");
     if(loading) return <p>I'm Loading! Please be patient</p>;
     return (
       <>
       <div className = 'paginationRow'>
-        <button onClick={() => setPages(pages -100)}>Prev - 5</button>
-        <button onClick={() => setPages(pages -20)}>Prev</button>
-        <button onClick={() => setPages(pages + 20)}>Next</button>
-        <button onClick={() => setPages(pages + 100)}>Next + 5</button>
+        <button onClick={() => pages - 100 >= 0 ? setPages(pages -100) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Prev - 5</button>
+        <button onClick={() => pages - 20 >= 0 ? setPages(pages -20) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Prev</button>
+        <button onClick={() => pages + 20 <= 1100 ? setPages(pages + 20) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Next</button>
+        <button onClick={() => pages + 100 <= 1100 ? setPages(pages + 100) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Next + 5</button>
       </div>
       <SearchForm />
-        <div className='cards'>
-          {data.map(item => <Pokemon data={item} key={item.name}/>)}
-        </div>
-        <div className = 'paginationRow'>
-          <button onClick={() => setPages(pages -100)}>Prev - 5</button>
-          <button onClick={() => setPages(pages -20)}>Prev</button>
-          <button onClick={() => setPages(pages + 20)}>Next</button>
-          <button onClick={() => setPages(pages + 100)}>Next + 5</button>
-        </div>
+      <div className='cards'>
+        {data.map(item => <Pokemon data={item} key={item.name}/>)}
+      </div>
+      <div className = 'paginationRow'>
+        <button onClick={() => pages - 100 >= 0 ? setPages(pages -100) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Prev - 5</button>
+        <button onClick={() => pages - 20 >= 0 ? setPages(pages -20) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Prev</button>
+        <button onClick={() => pages + 20 <= 1100 ? setPages(pages + 20) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Next</button>
+        <button onClick={() => pages + 100 <= 1100 ? setPages(pages + 100) : alert('Please choose a different page selection. Cannot navigate back to a prior page that does not exist')}>Next + 5</button>
+      </div>
       </>
     );
 

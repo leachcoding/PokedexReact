@@ -22,7 +22,7 @@ const Pokemon = props => {
     idVal = 'Id#: ' + id.toString();
   }
 
-  console.log(idVal);
+  // console.log(idVal);
 
   return (
     <>

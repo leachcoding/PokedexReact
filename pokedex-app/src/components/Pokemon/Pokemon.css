@@ -19,3 +19,37 @@
 .card img {
   width: 75%;
 }
+
+@media screen and (max-width: 900px){
+  .card {
+    width: 30%;
+  }
+  
+  .card:hover {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 675px){
+  .card {
+    width: 45%;
+  }
+  
+  .card:hover {
+    width: 45%;
+  }
+
+  .card img{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .card{
+    width: 80%;
+  }
+
+  .card img{
+    width: 100%;
+  }
+}
